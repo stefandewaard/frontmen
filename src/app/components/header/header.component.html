@@ -1,0 +1,24 @@
+<mat-toolbar class="header" color="primary">
+  <ng-container *ngIf="$logo | async; let logo">
+    <img [src]="logo | sanitizer:'resourceUrl'" alt="">
+  </ng-container>
+  <button mat-icon-button [matMenuTriggerFor]="settingsMenu">
+    <i class="mdi mdi-dots-vertical"></i>
+  </button>
+  <mat-menu #settingsMenu="matMenu">
+    <ng-container *ngIf="$user | async">
+      <button mat-menu-item (click)="logout()">
+        <i class="mdi mdi-logout"></i>{{'login.logout' | translate}}
+      </button>
+    </ng-container>
+    <button mat-menu-item [matMenuTriggerFor]="languagesMenu">
+      <i class="mdi mdi-translate"></i>{{'globals.languages' | translate}}
+    </button>
+  </mat-menu>
+  <mat-menu #languagesMenu="matMenu">
+    <button mat-menu-item *ngFor="let l of lang.translate.getLangs()" [class.active]="l === lang.translate.currentLang"
+      (click)="lang.langConfig(l)">
+      {{'languages.'+l | translate}}
+    </button>
+  </mat-menu>
+</mat-toolbar>

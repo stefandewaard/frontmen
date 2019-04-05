@@ -1,0 +1,20 @@
+
+<div class="row">
+  <div class="col-3">
+      <mat-button-toggle-group [(ngModel)]="intervalState" (ngModelChange)="setInterval()">
+          <mat-button-toggle [value]="true">
+            <i class="mdi mdi-play"></i>
+          </mat-button-toggle>
+          <mat-button-toggle [value]="false">
+            <i class="mdi mdi-pause"></i>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+  </div>
+  <div class="col-7">
+      <mat-slider min="1000" max="10000" step="1000" [(ngModel)]="time" (ngModelChange)="setInterval()" [disabled]="!intervalState"></mat-slider>
+  </div>
+  <div class="col-2 timer-value">
+    <span>    <i class="mdi mdi-timer-sand-empty"></i>&nbsp;{{time/1000}}    </span>
+  </div>
+</div>
+

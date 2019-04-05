@@ -1,0 +1,17 @@
+<div class="container">
+<list-interval (push)="pushFavorite()"></list-interval>
+<mat-tab-group class="container-fluid">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      {{'jokes.jokes' | translate}}
+    </ng-template>
+    <list-jokes [$jokes]="$jokes" (set)="setFavorite($event)" (remove)="removeFavorite($event)"></list-jokes>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+        <span [matBadge]="favorites.length" matBadgeOverlap="false">{{'jokes.favorites' | translate}}</span>
+    </ng-template>
+    <list-favorites [favorites]="favorites" (remove)="removeFavorite($event)"></list-favorites>
+  </mat-tab>
+</mat-tab-group>
+</div>

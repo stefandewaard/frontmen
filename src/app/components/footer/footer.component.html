@@ -1,0 +1,20 @@
+<mat-toolbar class="footer" color="accent">
+  <ng-container *ngIf="$company | async; let company">
+    <ul>
+      <li>
+          <h3>{{'globals.contact' | translate}}</h3>
+      </li>
+      <li>
+        <i class="mdi mdi-map-marker"></i>&nbsp;{{company.address}}<br>
+          <i class="mdi mdi-map-marker"
+            style="visibility:hidden"></i>&nbsp;{{company.zipcode}}&nbsp;&nbsp;{{company.location}}
+      </li>
+      <li>
+        <a [href]="'mailto:'+company.mail"><i class="mdi mdi-email"></i>&nbsp;{{company.mail}}</a>
+      </li>
+      <li>
+        <a [href]="'tel:'+company.phone"><i class="mdi mdi-phone"></i>&nbsp;{{company.phone}}</a>
+      </li>
+    </ul>
+  </ng-container>
+</mat-toolbar>

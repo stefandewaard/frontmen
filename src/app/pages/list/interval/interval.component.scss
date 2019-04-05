@@ -1,0 +1,18 @@
+
+
+div[class^="col-"] {
+  text-align: center;
+>mat-slider {
+  width: 100% !important;
+}
+&.timer {
+  &-value {
+    margin-top: auto;
+    margin-bottom: auto;
+    >span{
+      font-size: 20px;
+    }
+  }
+}
+
+}

@@ -1,0 +1,34 @@
+mat-form-field {
+  width: 100% !important;
+  i {
+    &.show {
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    &.pre {
+      margin-right: 10px;
+    }
+  }
+
+  >button {
+    float: right;
+    height: 40px;
+    transition: width .28s ease-out;
+    position: relative;
+
+    mat-spinner {
+      position: absolute !important;
+      top: 2px !important;
+      left: 25% !important;
+      transform: translate(-50%, 0) !important;
+    }
+  }
+
+}
+
+mat-error{
+  &.response{
+    margin-bottom: 16px;
+  }
+}

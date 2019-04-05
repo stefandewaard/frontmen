@@ -1,0 +1,15 @@
+mat-toolbar {
+  &.header {
+    height: 70px !important;
+    padding: 8px;
+
+    >img {
+      height: 54px;
+    }
+
+    >button {
+      position: absolute;
+      right: 8px;
+    }
+  }
+}

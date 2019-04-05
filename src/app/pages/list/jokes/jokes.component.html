@@ -1,0 +1,11 @@
+<mat-list class="container">
+  <mat-list-item class="row" *ngFor="let joke of $jokes | async">
+    <div class="col-2">
+      <button mat-icon-button (click)="toggleJoke(joke)">
+        <i class="mdi" [ngClass]="joke.favorite ? 'mdi-star' : 'mdi-star-outline'"></i>
+      </button>
+    </div>
+    <h4 class="col-8">{{joke.joke}}</h4>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
